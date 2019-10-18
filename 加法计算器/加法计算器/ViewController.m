@@ -29,11 +29,38 @@
 
 @implementation ViewController
 
+//当要显示一个界面的时候，首先创建这个界面对应的控制器
+//控制器创建好后，创建控制器所管理的那个view，当这个view加载完毕以后就开始执行下面的方法
+//所以只要viewDidload方法被执行了，view就被创建了
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    //创建一个按钮
+    // *button = [[UIButton alloc] init];
+    
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+
+    [button setTitle:@"点我吧" forState:UIControlStateNormal];
+    [button setTitle:@"被按了" forState:UIControlStateHighlighted];
+    //设置背景图片
+    UIImage *img = [UIImage imageNamed:@"sea"];
+    [button setBackgroundImage:img forState:UIControlStateNormal];
+    button.frame = CGRectMake(200, 200, 60, 60);
+    
+    [button setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    [button setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
+    //注册一个单击事件
+    [button addTarget:self action:@selector(buttonClick) forControlEvents:UIControlEventTouchUpInside];
+    
+    //把动态创建的按钮加到控制器所管理的那个view中
+    [self.view addSubview:button];
 }
-     
+
+- (void)buttonClick{
+    NSLog(@"aaaaa");
+    
+}
 
 - (IBAction)compute {
     NSLog(@"compute");
