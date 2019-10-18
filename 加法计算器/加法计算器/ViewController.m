@@ -16,6 +16,8 @@
 - (IBAction)right:(id)sender;
 - (IBAction)down:(id)sender;
 - (IBAction)scale:(UIButton *)sender;
+- (IBAction)rotate:(id)sender;
+- (IBAction)back:(id)sender;
 
 
 //outleth属性
@@ -26,7 +28,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *lblResult;
 
 @end
-
+//不要在transform之后用frame ！！！！
 @implementation ViewController
 
 //当要显示一个界面的时候，首先创建这个界面对应的控制器
@@ -35,7 +37,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
+   
     //创建一个按钮
     // *button = [[UIButton alloc] init];
     
@@ -144,23 +146,39 @@
 }
 
 - (IBAction)scale:(UIButton *)sender {
+    //1：记录当前transform状态
+    CGAffineTransform lastTransform = self.btnIcon.transform;
+    //2：还原transform，保证获取的frame是正确的frame
+    self.btnIcon.transform = CGAffineTransformIdentity;
+    //3：改变frame
+    
+
+    
+    
     CGRect originFrame =  self.btnIcon.frame;
     //设置y值-10
     //根据tag判断按钮
     if (sender.tag == 10) {
         originFrame.size.width +=5;
         originFrame.size.height +=5;
-    }else if (sender.tag ==20){
+    }else if (sender.tag == 20){
         originFrame.size.width -=5;
         originFrame.size.height -=5;
     }
 
-
-    
-    //把新的frame复制给btnIcon的frame
-    
-    
     self.btnIcon.frame = originFrame;
+     //把新的frame复制给btnIcon的frame
+    self.btnIcon.transform = lastTransform;
+}
+
+- (IBAction)rotate:(id)sender {
+    //45度 pi/4d弧度
+   // self.btnIcon.transform = CGAffineTransformMakeRotation(M_PI_4);
+    self.btnIcon.transform = CGAffineTransformRotate(self.btnIcon.transform, M_PI_4);
+}
+
+- (IBAction)back:(id)sender {
+    self.btnIcon.transform = CGAffineTransformIdentity;
 }
 
 
