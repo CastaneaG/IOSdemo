@@ -17,6 +17,7 @@
 		F84B58CE235490D600FB6868 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F84B58CD235490D600FB6868 /* main.m */; };
 		F84B58D8235490D600FB6868 /* _____Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = F84B58D7235490D600FB6868 /* _____Tests.m */; };
 		F84B58E3235490D600FB6868 /* _____UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = F84B58E2235490D600FB6868 /* _____UITests.m */; };
+		F8C1B0A1235A340F0005E804 /* pic.plist in Resources */ = {isa = PBXBuildFile; fileRef = F8C1B0A0235A340F0005E804 /* pic.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		F84B58DE235490D600FB6868 /* 加法计算器UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "加法计算器UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F84B58E2235490D600FB6868 /* _____UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "_____UITests.m"; sourceTree = "<group>"; };
 		F84B58E4235490D600FB6868 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F8C1B0A0235A340F0005E804 /* pic.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = pic.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 				F84B58CC235490D600FB6868 /* Info.plist */,
 				F84B58CD235490D600FB6868 /* main.m */,
 				F84B58C4235490D500FB6868 /* _____.xcdatamodeld */,
+				F8C1B0A0235A340F0005E804 /* pic.plist */,
 			);
 			path = "加法计算器";
 			sourceTree = "<group>";
@@ -246,6 +249,7 @@
 				F84B58CB235490D600FB6868 /* LaunchScreen.storyboard in Resources */,
 				F84B58C8235490D600FB6868 /* Assets.xcassets in Resources */,
 				F84B58C3235490D500FB6868 /* Main.storyboard in Resources */,
+				F8C1B0A1235A340F0005E804 /* pic.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
